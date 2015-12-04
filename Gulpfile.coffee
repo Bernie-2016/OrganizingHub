@@ -26,6 +26,7 @@ gulp.task 'coffee', ['clean'], ->
     'node_modules/jquery/dist/jquery.js'
     'node_modules/fastclick/lib/fastclick.js'
     'node_modules/zurb-foundation-5/js/foundation/foundation.js'
+    'node_modules/zurb-foundation-5/js/foundation/foundation.topbar.js'
     'coffee/**/*.coffee'
   ])
   .pipe(gulpif(/[.]coffee$/, coffee()))
@@ -52,9 +53,11 @@ gulp.task 'watch', ->
   ], (event) ->
     gulp.src(event.path).pipe connect.reload()
 
-  gulp.watch 'scss/**/*.scss', ['scss']
-  gulp.watch 'coffee/**/*.coffee', ['coffee']
-  gulp.watch 'jade/**/*.jade', ['jade']
+  gulp.watch [
+    'scss/**/*.scss'
+    'coffee/**/*.coffee'
+    'jade/**/*.jade'
+  ], ['default']
 
 gulp.task 'connect', ->
   connect.server

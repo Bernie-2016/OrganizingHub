@@ -153,7 +153,7 @@ $font-weight-bold: bold !default;
 // d. Media Query Ranges
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
-// $small-range: (0em, 40em);
+$small-range: (0em, 40em);
 // $medium-range: (40.063em, 64em);
 // $large-range: (64.063em, 90em);
 // $xlarge-range: (90.063em, 120em);
@@ -1378,7 +1378,7 @@ $topbar-height: 75px;
 // $topbar-title-font-size: rem-calc(17);
 
 // Style the top bar dropdown elements
-// $topbar-dropdown-bg: $oil;
+$topbar-dropdown-bg: $blue;
 // $topbar-dropdown-link-color: $white;
 $topbar-dropdown-link-bg: $orange;
 $topbar-dropdown-link-bg-hover: scale-color($orange, $lightness: 13%);

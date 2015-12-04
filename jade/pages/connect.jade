@@ -1,6 +1,9 @@
-extend ../page.jade
+extend ../layout.jade
+
+block vars
+  - var title = 'Connect with Bernie'
 
 block content
-  div.row
-    div.large-12.columns.page
-      + page('Connect with Bernie', 'https://connect.berniesanders.com')
+  div.row.page
+    iframe(src='https://connect.berniesanders.com')
+

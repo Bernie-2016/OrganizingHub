@@ -5,10 +5,30 @@
 
 nav {
   border-bottom: solid $blue 1px;
+  z-index: 5;
 
   img.logo {
     height: 45px;
     margin-left: 15px;
+  }
+
+  ul.title {
+    li {
+      background: white;
+
+      h1 {
+        color: $blue;
+        background-color: white;
+        font-family: jubilat;
+        text-align: center;
+      }
+    }
+  }
+}
+
+@media #{$small-only} {
+  nav ul.title {
+    display: none;
   }
 }
 
@@ -32,22 +52,14 @@ a.pane {
 
 div.page {
   height: 650px;
-  margin-top: 25px;
-  margin-bottom: 25px;
-
-  h1 {
-    color: $blue;
-    font-family: jubilat;
-    font-size: 30px;
-    text-align: center;
-  }
 
   iframe {
     position: absolute;
-    top: 50px;
+    padding-top: 75px;
+    top: 0;
     left: 0;
     width: 100%;
-    height: 600px;
+    height: 100%;
     border: solid 1px $bggray;
   }
 }

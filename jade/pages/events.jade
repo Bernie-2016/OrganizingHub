@@ -1,6 +1,9 @@
-extend ../page.jade
+extend ../layout.jade
+
+
+block vars
+  - var title = 'Bernie Events'
 
 block content
-  div.row
-    div.large-12.columns.page
-      + page('Bernie Events', 'https://map.berniesanders.com')
+  div.row.page
+    iframe(src='https://map.berniesanders.com')
