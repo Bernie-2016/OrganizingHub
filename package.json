@@ -19,6 +19,8 @@
   "devDependencies": {
     "del": "^2.1.0",
     "fastclick": "^1.0.6",
+    "firebase": "^2.3.2",
+    "firebase-tools": "^2.1.0",
     "gulp": "^3.9.0",
     "gulp-coffee": "^2.3.1",
     "gulp-concat": "^2.6.0",

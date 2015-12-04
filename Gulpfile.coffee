@@ -14,14 +14,14 @@ shell     = require('gulp-shell')
 gulp.task 'clean', ->
   del(['dist/**/*'])
 
-gulp.task 'scss', ->
+gulp.task 'scss', ['clean'], ->
   gulp.src('scss/index.scss')
     .pipe(sass(includePaths: ['node_modules/zurb-foundation-5/scss']))
     .pipe(concat('production.min.css'))
     .pipe(minifycss())
     .pipe(gulp.dest('dist'))
 
-gulp.task 'coffee', ->
+gulp.task 'coffee', ['clean'], ->
   gulp.src([
     'node_modules/jquery/dist/jquery.js'
     'node_modules/fastclick/lib/fastclick.js'
@@ -33,12 +33,12 @@ gulp.task 'coffee', ->
   .pipe(concat('production.min.js'))
   .pipe(gulp.dest('dist'))
 
-gulp.task 'jade', ->
+gulp.task 'jade', ['clean'], ->
   gulp.src('jade/pages/*.jade')
     .pipe(jade())
     .pipe(gulp.dest('dist'))
 
-gulp.task 'copy', ->
+gulp.task 'copy', ['clean'], ->
   gulp.src([
     'fonts/*'
     'img/*'
