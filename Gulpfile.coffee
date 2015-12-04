@@ -1,3 +1,4 @@
+fs        = require('fs')
 gulp      = require('gulp')
 gulpif    = require('gulp-if')
 del       = require('del')
@@ -21,10 +22,11 @@ gulp.task 'scss', ['clean'], ->
     .pipe(minifycss())
     .pipe(gulp.dest('dist'))
 
-gulp.task 'coffee', ['clean'], ->
+gulp.task 'coffee', ['clean', 'modernizr'], ->
   gulp.src([
     'node_modules/jquery/dist/jquery.js'
     'node_modules/fastclick/lib/fastclick.js'
+    'node_modules/modernizr/modernizr.js'
     'node_modules/zurb-foundation-5/js/foundation/foundation.js'
     'node_modules/zurb-foundation-5/js/foundation/foundation.topbar.js'
     'coffee/**/*.coffee'
@@ -69,10 +71,19 @@ gulp.task 'connect', ->
       redirect: false
 
 gulp.task 'firebase', ['default'], shell.task(['node_modules/.bin/firebase deploy'])
+gulp.task 'modernizr', ->
+  gulp.src('')
+    .pipe(
+      gulpif(
+        !fs.existsSync('node_modules/modernizr/modernizr.js'), 
+        shell(['node_modules/modernizr/bin/modernizr -c node_modules/modernizr/lib/config-all.json -d node_modules/modernizr'])
+      )
+    )
 
 gulp.task 'default', [
   'clean'
   'scss'
+  'modernizr'
   'coffee'
   'jade'
   'copy'
