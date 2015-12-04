@@ -1,3 +1,7 @@
-extend ../layout.jade
+extend ../home.jade
 
-p Hi!
+block content
+  div.row
+    + pane('Connect with Bernie', '/connect.html', 'img/connect.png')
+    + pane('Bernie Teams', '/teams.html', 'img/teams.png')
+    + pane('Bernie Events', '/events.html', 'img/events.png')

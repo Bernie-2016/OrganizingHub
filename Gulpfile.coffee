@@ -9,6 +9,7 @@ concat    = require('gulp-concat')
 jade      = require('gulp-jade')
 copy      = require('gulp-copy')
 connect   = require('gulp-connect')
+shell     = require('gulp-shell')
 
 gulp.task 'clean', ->
   del(['dist/**/*'])
@@ -64,6 +65,8 @@ gulp.task 'connect', ->
     connect:
       redirect: false
 
+gulp.task 'firebase', ['default'], shell.task(['node_modules/.bin/firebase deploy'])
+
 gulp.task 'default', [
   'clean'
   'scss'
@@ -76,4 +79,9 @@ gulp.task 'serve', [
   'default'
   'connect'
   'watch'
+]
+
+gulp.task 'deploy', [
+  'default'
+  'firebase'
 ]

@@ -11,3 +11,43 @@ nav {
     margin-left: 15px;
   }
 }
+
+a.pane {
+  display: block;
+  margin-top: 25px;
+  padding: 15px;
+  padding-top: 5px;
+
+  h1 {
+    color: $blue;
+    font-family: jubilat;
+    font-size: 24px;
+    text-align: center;
+  }
+
+  &:hover {
+    background-color: $bggray;
+  }
+}
+
+div.page {
+  height: 650px;
+  margin-top: 25px;
+  margin-bottom: 25px;
+
+  h1 {
+    color: $blue;
+    font-family: jubilat;
+    font-size: 30px;
+    text-align: center;
+  }
+
+  iframe {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    height: 600px;
+    border: solid 1px $bggray;
+  }
+}

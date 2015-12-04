@@ -1,0 +1,7 @@
+extend layout.jade
+
+mixin pane(title, url, img)
+  div.large-4.medium-6.small-12.columns
+    a.pane(href=url)
+      h1= title
+      img(src=img alt=title)
