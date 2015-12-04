@@ -4,6 +4,27 @@ html
     title Bernie 2016 Organizing Hub
     link(href='production.min.css' rel='stylesheet')
   body
+    nav.top-bar(data-topbar)
+      ul.title-area
+        li.name
+          h1
+            img.logo(src='img/logo.png' alt='Bernie 2016')
+
+        li.toggle-topbar.menu-icon
+          a(href='#')
+            span Menu
+
+      section.top-bar-section
+        ul.right
+          li.divider
+          li.has-dropdown
+            a(href='#') Organize
+            ul.dropdown
+              li
+                a(href='#') Connect
+              li
+                a(href='#') Teams
+
     block content
 
     script(src='production.min.js')

@@ -1,0 +1,13 @@
+@import 'normalize';
+@import 'settings';
+@import 'fonts';
+@import 'foundation';
+
+nav {
+  border-bottom: solid $blue 1px;
+
+  img.logo {
+    height: 45px;
+    margin-left: 15px;
+  }
+}
